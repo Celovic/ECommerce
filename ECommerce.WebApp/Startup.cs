@@ -27,6 +27,7 @@ namespace ECommerce.WebApp
         {
             services.AddDbContext<ECommerceDbContext>();
             services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<ICategoryService, CategoryService>();
 
             services.AddMvc(options => options.EnableEndpointRouting = false);
         }
@@ -50,6 +51,9 @@ namespace ECommerce.WebApp
             app.UseAuthorization();
             app.UseMvc(routes =>
             {
+                routes.MapRoute(
+                    name: "areas",
+                    template: "{area:exists}/{controller=Default}/{action=Index}/{id?}");
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");

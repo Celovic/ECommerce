@@ -10,6 +10,6 @@ namespace ECommerce.Business.Abstract
 {
     public interface ICategoryService : IGenericRepository<Category>
     {
-        public IEnumerable<Category> Included(string p);
+        IEnumerable<Category> Included(string p);
     }
 }

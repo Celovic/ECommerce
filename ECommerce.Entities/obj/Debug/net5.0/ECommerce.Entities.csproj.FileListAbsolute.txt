@@ -12,3 +12,4 @@ C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.Entities\obj\Debug\n
 C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.Entities\obj\Debug\net5.0\ref\ECommerce.Entities.dll
 C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.Entities\obj\Debug\net5.0\ECommerce.Entities.pdb
 C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.Entities\obj\Debug\net5.0\ECommerce.Entities.genruntimeconfig.cache
+C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.Entities\obj\Debug\net5.0\ECommerce.Entities.csproj.AssemblyReference.cache
