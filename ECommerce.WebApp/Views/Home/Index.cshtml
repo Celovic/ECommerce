@@ -1,0 +1,23 @@
+﻿@model IEnumerable<ECommerce.Entities.Entities.Concrete.Product>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/_Layout.cshtml";
+}
+<table id="customers" class="table table-responsive">
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>@item.ProductTitle</td>
+            <td>@item.ProductDescription</td>
+        </tr>
+
+
+
+    }
+</table>

@@ -1,3 +1,6 @@
+using ECommerce.Business.Abstract;
+using ECommerce.Business.Concrete;
+using ECommerce.Entities.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -22,7 +25,10 @@ namespace ECommerce.WebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
+            services.AddDbContext<ECommerceDbContext>();
+            services.AddTransient<IProductService, ProductService>();
+
+            services.AddMvc(options => options.EnableEndpointRouting = false);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,7 +48,12 @@ namespace ECommerce.WebApp
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+            });
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
