@@ -150,3 +150,5 @@ C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApp\bin\Debug\net
 C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApp\obj\Debug\net5.0\Razor\Views\_Layout.cshtml.g.cs
 C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApp\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApp\obj\Debug\net5.0\Razor\Areas\admin\Views\Default\Add.cshtml.g.cs
+C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApp\obj\Debug\net5.0\Razor\Areas\admin\Views\Default\Index.cshtml.g.cs
+C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApp\obj\Debug\net5.0\Razor\Areas\admin\Views\Default\Update.cshtml.g.cs

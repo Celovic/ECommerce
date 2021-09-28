@@ -12,8 +12,7 @@ namespace ECommerce.Repository.EnityFramework.Abstract
     {
         void Add(TEntity entity);
         void Update(TEntity entity);
-        TEntity GetById(string id1);
-        TEntity GetByUserId(int id);
+        TEntity GetById(int id);
         IEnumerable<TEntity> GetAll();
         IEnumerable<TEntity> GetAll(Expression<Func<TEntity, bool>> filter);
         void Remove(TEntity entity);

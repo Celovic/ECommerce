@@ -1,0 +1,36 @@
+﻿
+@model ECommerce.WebApp.Models.ViewModel
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/_Layout.cshtml";
+}
+<h3 style="text-align:center;">Add to Blog</h3>
+@using (Html.BeginForm())
+{
+
+
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model.Products)
+
+            {
+                <div class="col-md-12" style="margin-top:10px;margin-bottom:10px;">
+                    <input type="text" name="ProductTitle" class="form-control" value="@item.ProductTitle" />
+                </div>
+                <div class="col-md-12" style="margin-top:10px;margin-bottom:10px;">
+                    <textarea name="ProductDescription" class="form-control">@item.ProductDescription</textarea>
+                </div>
+                <div class="col-md-12" style="margin-top:10px;margin-bottom:10px;">
+                    <input type="number" name="StockQuantity" class="form-control" value="@item.StockQuantity" />
+                </div>
+            }
+            <div class="col-md-12" style="margin-top:10px;margin-bottom:10px;">
+                <button type="submit" class="btn btn-primary"> Update</button>
+            </div>
+        </div>
+    </div>
+
+
+}
+
+

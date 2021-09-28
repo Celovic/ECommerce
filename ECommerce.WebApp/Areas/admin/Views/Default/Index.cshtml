@@ -1,0 +1,49 @@
+﻿@model IEnumerable<ECommerce.Entities.Entities.Concrete.Product>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/_Layout.cshtml";
+}
+<a href="/admin/Default/Add">Add</a>
+<table id="customers" class="table table-responsive" style="text-align:center">
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Stock</th>
+        <th>Process</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+
+        @if (item.StockQuantity == 0)
+        {
+            <tr class="bg-danger">
+                <td>@item.ProductTitle</td>
+                <td>@item.ProductDescription</td>
+                <td>@item.StockQuantity</td>
+                <td>
+                    <a class="btn btn-info" href="/admin/Default/Update/@item.ProductId">Update</a>
+                    <a class="btn btn-danger" href="/admin/Default/Delete/@item.ProductId">Delete</a>
+                </td>
+            </tr>
+
+        }
+        else
+        {
+            <tr>
+                <td>@item.ProductTitle</td>
+                <td>@item.ProductDescription</td>
+                <td>@item.StockQuantity</td>
+                <td>
+                    <a class="btn btn-info" href="/admin/Default/Update/@item.ProductId">Update</a>
+                    <a class="btn btn-danger" href="/admin/Default/Delete/@item.ProductId">Delete</a>
+                </td>
+            </tr>
+
+        }
+
+
+
+
+    }
+</table>

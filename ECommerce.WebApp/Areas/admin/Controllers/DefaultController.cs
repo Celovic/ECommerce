@@ -25,7 +25,7 @@ namespace ECommerce.WebApp.Areas.admin.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            return View(_productService.GetAll());
         }
         public IActionResult Add()
         {
@@ -43,24 +43,36 @@ namespace ECommerce.WebApp.Areas.admin.Controllers
             if (ModelState.IsValid)
             {
                 _productService.Add(product);
-                _context.SaveChanges();
                 return RedirectToAction("Index", "Default");
 
             }
             return View("Add");
         }
-        public IActionResult Update()
+        public IActionResult Update(ViewModel model, int id)
         {
-            return View();
+            model.Products = _productService.GetAll().Where(x => x.ProductId == id);
+            return View(model);
         }
         [HttpPost]
-        public IActionResult Update(Product product)
+        public IActionResult Update(Product product, ViewModel model, int id)
         {
+            /*if (ModelState.IsValid)
+            {
+
+                var q = _productService.GetAll().Where(x => x.ProductId == id).Select(y => y.ProductTitle);
+                product.ProductTitle = model.Product.ProductTitle;
+                product.ProductDescription = model.Product.ProductDescription;
+                product.StockQuantity = model.Product.StockQuantity;
+                _productService.Update(product);
+                _context.SaveChanges();
+                return RedirectToAction("Index", "Default");
+            }*/
             return View();
         }
-        public IActionResult Delete()
+        public IActionResult Delete(int id)
         {
-            return View();
+            _productService.Remove(new Product { ProductId = id });
+            return RedirectToAction("Index", "Default");
         }
     }
 }

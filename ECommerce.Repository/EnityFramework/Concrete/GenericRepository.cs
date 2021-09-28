@@ -37,21 +37,14 @@ namespace ECommerce.Repository.EnityFramework.Concrete
                     : context.Set<TEntity>().Where(filter).ToList();
             }
         }
-        public TEntity GetById(string id1)
-        {
-            using (var context = new TContext())
-            {
-                return context.Set<TEntity>().Find(id1);
-            }
-        }
-
-        public TEntity GetByUserId(int id)
+        public TEntity GetById(int id)
         {
             using (var context = new TContext())
             {
                 return context.Set<TEntity>().Find(id);
             }
         }
+
 
         public void Remove(TEntity entity)
         {
