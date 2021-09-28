@@ -50,23 +50,22 @@ namespace ECommerce.WebApp.Areas.admin.Controllers
         }
         public IActionResult Update(ViewModel model, int id)
         {
-            model.Products = _productService.GetAll().Where(x => x.ProductId == id);
+            model = new ViewModel
+            {
+                Product = _productService.GetById(id),
+                Categories = _categoryService.GetAll(),
+                Products = _productService.GetAll().Where(x => x.ProductId == id)
+            };
             return View(model);
         }
         [HttpPost]
-        public IActionResult Update(Product product, ViewModel model, int id)
+        public IActionResult Update(Product product,int id)
         {
-            /*if (ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-
-                var q = _productService.GetAll().Where(x => x.ProductId == id).Select(y => y.ProductTitle);
-                product.ProductTitle = model.Product.ProductTitle;
-                product.ProductDescription = model.Product.ProductDescription;
-                product.StockQuantity = model.Product.StockQuantity;
                 _productService.Update(product);
-                _context.SaveChanges();
-                return RedirectToAction("Index", "Default");
-            }*/
+                return RedirectToAction("Index");
+            }
             return View();
         }
         public IActionResult Delete(int id)
