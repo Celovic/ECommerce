@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ECommerce.Entities.Entities.Abstract;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -6,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ECommerce.Entities.Entities
+namespace ECommerce.Entities.Entities.Concrete
 {
-    public class Product
+    public class Product :IEntity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
