@@ -1,0 +1,15 @@
+C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.Entities\bin\Debug\net5.0\ECommerce.Entities.deps.json
+C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.Entities\bin\Debug\net5.0\ECommerce.Entities.runtimeconfig.json
+C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.Entities\bin\Debug\net5.0\ECommerce.Entities.runtimeconfig.dev.json
+C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.Entities\bin\Debug\net5.0\ECommerce.Entities.dll
+C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.Entities\bin\Debug\net5.0\ref\ECommerce.Entities.dll
+C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.Entities\bin\Debug\net5.0\ECommerce.Entities.pdb
+C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.Entities\obj\Debug\net5.0\ECommerce.Entities.csproj.AssemblyReference.cache
+C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.Entities\obj\Debug\net5.0\ECommerce.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.Entities\obj\Debug\net5.0\ECommerce.Entities.AssemblyInfoInputs.cache
+C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.Entities\obj\Debug\net5.0\ECommerce.Entities.AssemblyInfo.cs
+C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.Entities\obj\Debug\net5.0\ECommerce.Entities.csproj.CoreCompileInputs.cache
+C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.Entities\obj\Debug\net5.0\ECommerce.Entities.dll
+C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.Entities\obj\Debug\net5.0\ref\ECommerce.Entities.dll
+C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.Entities\obj\Debug\net5.0\ECommerce.Entities.pdb
+C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.Entities\obj\Debug\net5.0\ECommerce.Entities.genruntimeconfig.cache
