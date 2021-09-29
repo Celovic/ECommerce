@@ -151,8 +151,9 @@ C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApp\obj\Debug\net
 C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApp\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApp\obj\Debug\net5.0\Razor\Areas\admin\Views\Default\Index.cshtml.g.cs
 C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApp\obj\Debug\net5.0\Razor\Areas\admin\Views\Category\AddCategory.cshtml.g.cs
-C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApp\obj\Debug\net5.0\Razor\Areas\admin\Views\Product\Add.cshtml.g.cs
 C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApp\obj\Debug\net5.0\Razor\Areas\admin\Views\Product\Update.cshtml.g.cs
 C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApp\obj\Debug\net5.0\Razor\Areas\admin\Views\Category\UpdateCategory.cshtml.g.cs
 C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApp\obj\Debug\net5.0\Razor\Areas\admin\Views\Product\Index.cshtml.g.cs
 C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApp\obj\Debug\net5.0\Razor\Areas\admin\Views\Category\Index.cshtml.g.cs
+C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApp\obj\Debug\net5.0\Razor\Areas\admin\Views\Product\Add.cshtml.g.cs
+C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApp\obj\Debug\net5.0\Razor\Views\_AdminLayout.cshtml.g.cs

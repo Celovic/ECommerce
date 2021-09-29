@@ -1,10 +1,9 @@
 ﻿@model IEnumerable<ECommerce.Entities.Entities.Concrete.Product>
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/_Layout.cshtml";
+    Layout = "~/Views/_AdminLayout.cshtml";
 }
-<button type="button" href="/admin/Product/Add" value="Add a product" class="btn btn-info"></button>
-<button type="button" href="/admin/Category/Add" value="Add a category" class="btn btn-info"></button>
+
 <table id="customers" class="table table-responsive" style="text-align:center">
     <tr>
         <th>Title</th>

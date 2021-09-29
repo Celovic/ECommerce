@@ -1,6 +1,8 @@
 using ECommerce.Business.Abstract;
 using ECommerce.Business.Concrete;
 using ECommerce.Entities.Context;
+using ECommerce.WebApp.CartServices.Abstract;
+using ECommerce.WebApp.CartServices.Concrete;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -26,6 +28,8 @@ namespace ECommerce.WebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ECommerceDbContext>();
+            services.AddTransient<ICartSessionService, CartSessionService>();
+            services.AddTransient<ICartService, CartService>();
             services.AddTransient<IProductService, ProductService>();
             services.AddTransient<ICategoryService, CategoryService>();
 

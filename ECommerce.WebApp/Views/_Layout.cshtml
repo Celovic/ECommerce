@@ -34,7 +34,48 @@
                 color: white;
             }
 
+        header ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #34495e;
+        }
 
+            header ul li {
+                float: right;
+            }
+
+        li {
+            display: inline-block;
+        }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                li a:hover {
+                    background-color: #f39c12;
+                }
+
+        header ul li ul {
+            background-color: #2c3e50;
+            display: none;
+            position: absolute;
+            width: 100px
+        }
+
+        header ul li:hover ul {
+            display: block;
+        }
+
+        li ul li {
+            display: block;
+        }
 
 
         /*FOOTER*/
@@ -91,59 +132,51 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-default">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" style="color:blue;" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                Brand
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <!--  <a class="navbar-brand" href="#">Brand</a>-->
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <!--<ul class="nav navbar-nav">
-                <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">Link</a></li>
-            </ul>-->
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Basket<span class="caret"></span></a>
-                </li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
-        <!-- /.container-fluid -->
-    </nav>
+    <header>
+        <ul>
+            <li><a href="/Home/Index">Home Page</a></li>
+            <li>
+                <a href="">Cart</a>
+                <ul>
+                    <li>
+                        <a href=""></a>
+                        @await Component.InvokeAsync("CartSummary")
+                    </li>
+                </ul>
+            </li>
+            <li><a href="">Contact Us</a></li>
+        </ul>
+    </header>
 
+    <div class="col-md-10" style="margin-top:75px;">
+        @await Component.InvokeAsync("Category")
 
-    <div class="col-md-10">
-        
         @RenderBody()
     </div>
-    <div class="container-fluid pb-0 mb-0 justify-content-center text-light ">
+    <div class="container-fluid justify-content-center text-light" style="margin-bottom:0px;">
         <footer>
             <div class="row my-5 justify-content-center py-5">
                 <div class="col-11">
                     <div class="row ">
                         <div class="col-xl-8 col-md-4 col-sm-4 col-12 my-auto mx-auto a">
-                            <h3 class="text-muted mb-md-0 mb-5 bold-text">Pepper.</h3>
+                            <h3 class="text-muted mb-md-0 mb-5 bold-text">E-COMMERCE</h3>
                         </div>
                         <div class="col-xl-2 col-md-4 col-sm-4 col-12">
                             <h6 class="mb-3 mb-lg-4 bold-text "><b>MENU</b></h6>
                             <ul class="list-unstyled">
-                                <li>Home</li>
+                                <li href="/Home/Index">Home</li>
+                                <br />
                                 <li>About</li>
-                                <li>Blog</li>
-                                <li>Portfolio</li>
+                                <br />
+                                <li>Products</li>
+                                <br />
+                                <li>Categories</li>
                             </ul>
                         </div>
                         <div class="col-xl-2 col-md-4 col-sm-4 col-12">
                             <h6 class="mb-3 mb-lg-4 text-muted bold-text mt-sm-0 mt-5"><b>ADDRESS</b></h6>
-                            <p class="mb-1">605, RATAN ICON BUILDING</p>
-                            <p>SEAWOODS SECTOR</p>
+                            <p class="mb-1">Florya Caddesi Şenlikköy Mahllesi no 84</p>
+                            <p>İstanbul/Bakırköy</p>
                         </div>
                     </div>
                     <div class="row ">
@@ -158,17 +191,14 @@
                                 </span> <span class="mx-2">
                                     <i class="fa fa-instagram" aria-hidden="true"></i>
                                 </span>
-                            </p><small class="rights"><span>&#174;</span> Pepper All Rights Reserved.</small>
+                            </p><small class="rights"><span>&#174;</span> E-COMMERCE All Rights Reserved.</small>
                         </div>
                         <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-1 align-self-end ">
                             <h6 class="mt-55 mt-2 text-muted bold-text"><b>ANIRUDH SINGLA</b></h6><small>
-                                <span><i class="fa fa-envelope" aria-hidden="true"></i></span><a href="mailto:celal.can.1998@hotmail.com">
+                                <span><i class="fa fa-envelope" aria-hidden="true"></i></span><a href="mailto:celal.can.1998@hotmail.com" style="text-decoration:none">
                                     &emsp; Send email
                                 </a>
                             </small>
-                        </div>
-                        <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-2 align-self-end mt-3 ">
-                            <h6 class="text-muted bold-text"><b>RISHABH SHEKHAR</b></h6><small><span><i class="fa fa-envelope" aria-hidden="true"></i></span> rishab@gmail.com</small>
                         </div>
                     </div>
                 </div>

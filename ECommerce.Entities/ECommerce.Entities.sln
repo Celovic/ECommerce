@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31402.337
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.Entities", "ECommerce.Entities.csproj", "{4A0DDC7B-A015-444D-AC6C-960F4D98B760}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerce.Entities", "ECommerce.Entities.csproj", "{4A0DDC7B-A015-444D-AC6C-960F4D98B760}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.Business", "..\ECommerce.Business\ECommerce.Business.csproj", "{1608AA41-5D89-4C51-8079-6FA209987577}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerce.Business", "..\ECommerce.Business\ECommerce.Business.csproj", "{1608AA41-5D89-4C51-8079-6FA209987577}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.Repository", "..\ECommerce.Repository\ECommerce.Repository.csproj", "{2582A2B9-E98F-43C2-9725-A29B9B688946}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerce.Repository", "..\ECommerce.Repository\ECommerce.Repository.csproj", "{2582A2B9-E98F-43C2-9725-A29B9B688946}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.WebApp", "..\ECommerce.WebApp\ECommerce.WebApp.csproj", "{45F7B9CC-A28A-45A7-9F5E-C85BA339A8BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerce.WebApp", "..\ECommerce.WebApp\ECommerce.WebApp.csproj", "{45F7B9CC-A28A-45A7-9F5E-C85BA339A8BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

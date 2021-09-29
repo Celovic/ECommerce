@@ -11,6 +11,7 @@ namespace ECommerce.WebApp.Models
         public IEnumerable<Product> Products { get; set; }
         public IEnumerable<Category> Categories { get; set; }
         public Product Product { get; set; }
-        public Category Category{ get; set; }
+        public Category Category { get; set; }
+        public Cart Cart { get; set; }
     }
 }
