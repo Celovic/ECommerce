@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ECommerce.Entities.Entities.Concrete.Product>
+﻿@model ECommerce.WebApp.Models.ViewModel
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/_Layout.cshtml";
@@ -10,11 +10,9 @@
         <th>Description</th>
         <th>Stock</th>
         <th>Process</th>
-
     </tr>
-    @foreach (var item in Model)
+    @foreach (var item in Model.Products)
     {
-
         @if (item.StockQuantity == 0)
         {
             <tr class="bg-danger">
@@ -26,7 +24,6 @@
                     <a class="btn btn-danger" href="/admin/Default/Delete/@item.ProductId">Delete</a>
                 </td>
             </tr>
-
         }
         else
         {
@@ -39,11 +36,27 @@
                     <a class="btn btn-danger" href="/admin/Default/Delete/@item.ProductId">Delete</a>
                 </td>
             </tr>
-
         }
+    }
+    <br />
+    <br />
+    <br />
+    <tr>
+        <th>Category Id</th>
+        <th>Category Name</th>
+        <th>Process</th>
 
+    </tr>
+    @foreach (var item in Model.Categories)
+    {
+        <tr>
+            <th>@item.CategoryId</th>
+            <th>@item.CategoryName</th>
+            <td>
+                <a class="btn btn-info" href="/admin/Default/UpdateCategory/@item.CategoryId">Update</a>
+                <a class="btn btn-danger" href="/admin/Default/DeleteCategory/@item.CategoryId">Delete</a>
+            </td>
 
-
-
+        </tr>
     }
 </table>

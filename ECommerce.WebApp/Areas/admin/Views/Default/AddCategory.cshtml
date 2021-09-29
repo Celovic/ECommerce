@@ -1,0 +1,18 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *,ECommerce.WebApp
+@model ECommerce.WebApp.Models.ViewModel
+@{
+    ViewData["Title"] = "AddCategory";
+    Layout = "~/Views/_Layout.cshtml";
+}
+<h3 style="text-align:center;">Add to Category</h3>
+<form asp-controller="Default" asp-action="AddCategory" method="post">
+    <div class="form-group">
+        <label asp-for="Category.CategoryName"></label>
+        <input asp-for="Category.CategoryName" class="form-control" placeholder="Product Title" />
+        <span asp-validation-for="Category.CategoryName"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Add" class="btn btn-success" />
+    </div>
+</form>

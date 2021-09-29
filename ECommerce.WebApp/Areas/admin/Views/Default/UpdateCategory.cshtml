@@ -1,0 +1,26 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *,ECommerce.WebApp
+@model ECommerce.WebApp.Models.ViewModel
+@{
+    ViewData["Title"] = "UpdateCategory";
+    Layout = "~/Views/_Layout.cshtml";
+}
+<h3 style="text-align:center;">Update Categry</h3>
+
+<form asp-controller="Default" asp-action="UpdateCategory" method="post">
+    @foreach (var item in Model.Categories)
+    {
+
+        <div class="form-group">
+            <label asp-for="Category.CategoryName"></label>
+            <input asp-for="Category.CategoryName" value="@item.CategoryName" class="form-control" />
+            <span asp-validation-for="Category.CategoryName"></span>
+        </div>
+    }
+    <div class="form-group">
+    </div>
+    <input type="hidden" asp-for="Category.CategoryId" />
+    <input type="submit" value="Update" class="btn btn-success" />
+</form>
+
+

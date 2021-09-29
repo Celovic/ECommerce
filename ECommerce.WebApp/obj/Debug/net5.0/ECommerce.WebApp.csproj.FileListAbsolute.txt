@@ -152,3 +152,5 @@ C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApp\obj\Debug\net
 C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApp\obj\Debug\net5.0\Razor\Areas\admin\Views\Default\Add.cshtml.g.cs
 C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApp\obj\Debug\net5.0\Razor\Areas\admin\Views\Default\Index.cshtml.g.cs
 C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApp\obj\Debug\net5.0\Razor\Areas\admin\Views\Default\Update.cshtml.g.cs
+C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApp\obj\Debug\net5.0\Razor\Areas\admin\Views\Default\AddCategory.cshtml.g.cs
+C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApp\obj\Debug\net5.0\Razor\Areas\admin\Views\Default\UpdateCategory.cshtml.g.cs

@@ -11,5 +11,6 @@ namespace ECommerce.Business.Abstract
     public interface ICategoryService : IGenericRepository<Category>
     {
         IEnumerable<Category> Included(string p);
+        void DeleteWithProduct(int id);
     }
 }
