@@ -1,0 +1,21 @@
+﻿@model IEnumerable<ECommerce.Entities.Entities.Concrete.Category>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/_Layout.cshtml";
+}
+<button type="button" href="/admin/Product/Add" value="Add a product" class="btn btn-info"></button>
+<button type="button" href="/admin/Category/Add" value="Add a category" class="btn btn-info"></button>
+<table id="customers" class="table table-responsive" style="text-align:center">
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.CategoryId</th>
+            <th>@item.CategoryName</th>
+            <td>
+                <a class="btn btn-info" href="/admin/Category/UpdateCategory/@item.CategoryId">Update</a>
+                <a class="btn btn-danger" href="/admin/Category/DeleteCategory/@item.CategoryId">Delete</a>
+            </td>
+
+        </tr>
+    }
+</table>
