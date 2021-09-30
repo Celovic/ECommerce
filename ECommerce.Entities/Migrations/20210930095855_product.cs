@@ -2,7 +2,7 @@
 
 namespace ECommerce.Entities.Migrations
 {
-    public partial class ECommerce : Migration
+    public partial class product : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

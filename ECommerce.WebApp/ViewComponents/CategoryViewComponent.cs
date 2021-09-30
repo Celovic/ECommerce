@@ -19,7 +19,6 @@ namespace ECommerce.WebApp.ViewComponents
             var model = new ViewModel
             {
                 Categories = _categoryService.GetAll(),
-                //Hangi kategoriye tıklarsak belirginleştirmek için
             };
             return View(model);
         }

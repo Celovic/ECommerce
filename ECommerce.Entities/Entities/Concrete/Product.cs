@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ECommerce.Entities.Entities.Concrete
 {
-    public class Product :IEntity
+    public class Product : IEntity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -22,8 +22,8 @@ namespace ECommerce.Entities.Entities.Concrete
         [Required]
         public int StockQuantity { get; set; }
         [Required]
-        [ForeignKey("Category")]
         public int CategoryId { get; set; }
+        //[ForeignKey("CategoryId")]
         public virtual Category Category { get; set; }
     }
 }

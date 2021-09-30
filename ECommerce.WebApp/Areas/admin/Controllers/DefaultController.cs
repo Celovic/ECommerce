@@ -17,22 +17,18 @@ namespace ECommerce.WebApp.Areas.admin.Controllers
         readonly IProductService _productService;
         readonly ICategoryService _categoryService;
         readonly ECommerceDbContext _context;
+
         public DefaultController(IProductService productService, ICategoryService categoryService, ECommerceDbContext context)
         {
             _productService = productService;
             _categoryService = categoryService;
             _context = context;
+
         }
         public IActionResult Index(ViewModel model, int id)
         {
-            model = new ViewModel
-            {
-                Categories = _categoryService.GetAll(),
-                Products = _productService.GetAll()
-            };
-
             //Products.Where(x=>x.CategoryId==item.CategoryId).Select(y=>y.ProductTitle)
-            return View(model);
+            return View(_productService.GetProductsWithCatgory("Category"));
         }
     }
 }

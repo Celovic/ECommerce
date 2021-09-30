@@ -18,7 +18,7 @@ namespace ECommerce.Entities.Migrations
                 .HasAnnotation("ProductVersion", "5.0.10")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("ECommerce.Entities.Entities.Category", b =>
+            modelBuilder.Entity("ECommerce.Entities.Entities.Concrete.Category", b =>
                 {
                     b.Property<int>("CategoryId")
                         .ValueGeneratedOnAdd()
@@ -35,7 +35,7 @@ namespace ECommerce.Entities.Migrations
                     b.ToTable("TBLCategory");
                 });
 
-            modelBuilder.Entity("ECommerce.Entities.Entities.Product", b =>
+            modelBuilder.Entity("ECommerce.Entities.Entities.Concrete.Product", b =>
                 {
                     b.Property<int>("ProductId")
                         .ValueGeneratedOnAdd()
@@ -64,9 +64,9 @@ namespace ECommerce.Entities.Migrations
                     b.ToTable("TBLProduct");
                 });
 
-            modelBuilder.Entity("ECommerce.Entities.Entities.Product", b =>
+            modelBuilder.Entity("ECommerce.Entities.Entities.Concrete.Product", b =>
                 {
-                    b.HasOne("ECommerce.Entities.Entities.Category", "Category")
+                    b.HasOne("ECommerce.Entities.Entities.Concrete.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -75,7 +75,7 @@ namespace ECommerce.Entities.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("ECommerce.Entities.Entities.Category", b =>
+            modelBuilder.Entity("ECommerce.Entities.Entities.Concrete.Category", b =>
                 {
                     b.Navigation("Products");
                 });

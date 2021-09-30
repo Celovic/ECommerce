@@ -19,6 +19,7 @@ namespace ECommerce.Business.Concrete
         {
             _context = context;
         }
+
         public IEnumerable<Product> Search(string searchString)
         {
             var search = from m in _context.TBLProduct
@@ -30,6 +31,10 @@ namespace ECommerce.Business.Concrete
                 x.Category.CategoryName.Contains(searchString));
             }
             return search.ToList();
+        }
+        public IEnumerable<Product> GetProductsWithCatgory(string p)
+        {
+            return _context.TBLProduct.Include(p);
         }
     }
 }

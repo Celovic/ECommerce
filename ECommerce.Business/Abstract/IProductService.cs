@@ -11,6 +11,6 @@ namespace ECommerce.Business.Abstract
     public interface IProductService : IGenericRepository<Product>
     {
         public IEnumerable<Product> Search(string searchString);
-        //public IEnumerable<Product> Included();
+        public IEnumerable<Product> GetProductsWithCatgory(string p);
     }
 }

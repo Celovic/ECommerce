@@ -74,7 +74,7 @@ namespace ECommerce.WebApp.Areas.admin.Controllers
                 _productService.Remove(new Product { ProductId = item.ProductId });
             }
             _categoryService.Remove(new Category { CategoryId = id });
-            _context.SaveChanges();
+            //_context.SaveChanges();
             return RedirectToAction("Index", "Default");
         }
     }

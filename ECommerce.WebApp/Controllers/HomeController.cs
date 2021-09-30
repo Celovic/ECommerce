@@ -1,4 +1,5 @@
 ﻿using ECommerce.Business.Abstract;
+using ECommerce.Entities.Context;
 using ECommerce.Entities.Entities.Concrete;
 using ECommerce.WebApp.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -12,11 +13,9 @@ namespace ECommerce.WebApp.Controllers
     public class HomeController : Controller
     {
         readonly IProductService _productService;
-        readonly ICategoryService _categoryService;
-        public HomeController(IProductService productService, ICategoryService categoryService)
+        public HomeController(IProductService productService)
         {
             _productService = productService;
-            _categoryService = categoryService;
         }
         public IActionResult Index()
         {

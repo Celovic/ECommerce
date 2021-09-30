@@ -5,6 +5,7 @@ using ECommerce.WebApp.CartServices.Abstract;
 using ECommerce.WebApp.CartServices.Concrete;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -28,6 +29,9 @@ namespace ECommerce.WebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ECommerceDbContext>();
+            services.AddSession();
+            services.AddControllersWithViews();
+            services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
             services.AddTransient<ICartSessionService, CartSessionService>();
             services.AddTransient<ICartService, CartService>();
             services.AddTransient<IProductService, ProductService>();
@@ -43,16 +47,13 @@ namespace ECommerce.WebApp
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseExceptionHandler("/Error");
-            }
-
             app.UseStaticFiles();
 
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseSession();
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
