@@ -46,5 +46,19 @@ namespace ECommerce.WebApp.Controllers
             _cartSessionService.SetCart(cart);
             return RedirectToAction("List");
         }
+
+        public IActionResult CompleteShopping()
+        {
+            var shopping = new ViewModel
+            {
+                ShoppingDetails = new ShoppingDetails()
+            };
+            return View(shopping);
+        }
+        [HttpPost]
+        public IActionResult CompleteShopping(ShoppingDetails shopping)
+        {
+            return View();
+        }
     }
 }
