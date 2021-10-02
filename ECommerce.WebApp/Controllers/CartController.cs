@@ -1,4 +1,7 @@
-﻿using ECommerce.WebApp.CartServices.Abstract;
+﻿using ECommerce.Business.Abstract;
+using ECommerce.Entities.Entities.Concrete;
+using ECommerce.WebApp.CartServices.Abstract;
+using ECommerce.WebApp.CartServices.Concrete;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,13 +13,21 @@ namespace ECommerce.WebApp.Controllers
     public class CartController : Controller
     {
         readonly ICartSessionService _cartSessionService;
-        public CartController(ICartSessionService cartSessionService)
+        readonly ICartService _cartService;
+        readonly IProductService _productService;
+        public CartController(ICartSessionService cartSessionService, ICartService cartService, IProductService productService)
         {
             _cartSessionService = cartSessionService;
+            _cartService = cartService;
+            _productService = productService;
         }
-        public IActionResult Index()
+        public IActionResult AddToCart(Product product)
         {
-            return View();
+            var productToBeAdded = _productService.GetById(product.ProductId);
+            var cart = _cartSessionService.GetCart();
+            _cartService.AddToCart(cart, productToBeAdded);
+            _cartSessionService.SetCart(cart);
+            return RedirectToAction("Index","Home");
         }
     }
 }
