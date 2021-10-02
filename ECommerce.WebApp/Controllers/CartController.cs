@@ -39,5 +39,12 @@ namespace ECommerce.WebApp.Controllers
             };
             return View(model);
         }
+        public IActionResult RemoveToCart(int productId)
+        {
+            var cart = _cartSessionService.GetCart();
+            _cartService.RemoveFromCart(cart, productId);
+            _cartSessionService.SetCart(cart);
+            return RedirectToAction("List");
+        }
     }
 }
