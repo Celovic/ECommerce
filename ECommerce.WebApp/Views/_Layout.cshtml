@@ -136,15 +136,15 @@
         <ul>
             <li><a href="/Home/Index">Home Page</a></li>
             <li>
-                <a href="">Cart</a>
-                <ul>
-                    <li>
-                        <a href=""></a>
+                <a href="/Cart/CartList/">Cart</a>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <!--<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Basket<span class="caret"></span></a>-->
                         @await Component.InvokeAsync("CartSummary")
                     </li>
                 </ul>
             </li>
-            <li><a href="">Contact Us</a></li>
+            <li style="text-decoration:none"><a href="">Contact Us</a></li>
         </ul>
     </header>
 

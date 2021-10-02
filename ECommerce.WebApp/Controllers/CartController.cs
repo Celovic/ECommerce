@@ -2,6 +2,7 @@
 using ECommerce.Entities.Entities.Concrete;
 using ECommerce.WebApp.CartServices.Abstract;
 using ECommerce.WebApp.CartServices.Concrete;
+using ECommerce.WebApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,16 @@ namespace ECommerce.WebApp.Controllers
             var cart = _cartSessionService.GetCart();
             _cartService.AddToCart(cart, productToBeAdded);
             _cartSessionService.SetCart(cart);
-            return RedirectToAction("Index","Home");
+            return RedirectToAction("Index", "Home");
+        }
+        public IActionResult CartList()
+        {
+            var cart = _cartSessionService.GetCart();
+            ViewModel model = new ViewModel()
+            {
+                Cart = cart
+            };
+            return View(model);
         }
     }
 }

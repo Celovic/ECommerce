@@ -4,15 +4,8 @@
     @foreach (var item in Model.Cart.CartLines)
     {
         <li>
-            <a>@item.Product.ProductTitle <span class="badge">@item.Quantity</span></a>
+            <a>@item.Product.ProductTitle <span class="badge-dark">@item.Quantity</span></a>
         </li>
 
     }
-    <li role="separator" class="divider"></li>
-    <li><a><span class="glypicon glypicon-align-left glypicon-shopping-cart" artia-hidden="true"></span>@Model.Cart.Total</a></li>
-
-
-    <li role="separator" class="divider"></li>
-    <li><a asp-controller="Cart" asp-action="List">Cart Details</a></li>
-
 </ul>

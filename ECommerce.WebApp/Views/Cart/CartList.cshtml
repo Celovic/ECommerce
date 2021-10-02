@@ -1,0 +1,24 @@
+﻿@model ECommerce.WebApp.Models.ViewModel
+@{
+    ViewData["Title"] = "CartList";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+<h1>CartList</h1>
+<table>
+    <tr>
+        <td>Product Title</td>
+        <td>Description</td>
+        <td>Stock</td>
+        <td></td>
+    </tr>
+    @foreach (var item in Model.Cart.CartLines)
+    {
+
+        <tr>
+            <td>@item.Product.ProductTitle</td>
+            <td>@item.Product.ProductDescription</td>
+            <td>@item.Quantity.</td>
+        </tr>
+    }
+</table>
