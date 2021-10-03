@@ -1,4 +1,5 @@
 ﻿using ECommerce.Business.Abstract;
+using ECommerce.Entities.Context;
 using ECommerce.Entities.Entities.Concrete;
 using ECommerce.WebApp.CartServices.Abstract;
 using ECommerce.WebApp.CartServices.Concrete;
@@ -58,6 +59,25 @@ namespace ECommerce.WebApp.Controllers
         [HttpPost]
         public IActionResult CompleteShopping(ShoppingDetails shopping)
         {
+            if (ModelState.IsValid)
+            {
+                var cart = _cartSessionService.GetCart();
+                foreach (var item in cart.CartLines)
+                {
+                    var remainingStock = item.Product.StockQuantity - item.Quantity;
+                    Product product = new Product
+                    {
+                        ProductId = item.Product.ProductId,
+                        Category = item.Product.Category,
+                        CategoryId = item.Product.CategoryId,
+                        ProductTitle = item.Product.ProductTitle,
+                        ProductDescription = item.Product.ProductDescription,
+                        StockQuantity = remainingStock
+                    };
+                    _productService.Update(product);
+                }
+                return RedirectToAction("Index", "Home");
+            }
             return View();
         }
     }

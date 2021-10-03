@@ -15,12 +15,10 @@ namespace ECommerce.WebApp.Areas.admin.Controllers
     {
         readonly IProductService _productService;
         readonly ICategoryService _categoryService;
-        readonly ECommerceDbContext _context;
-        public ProductController(IProductService productService, ICategoryService categoryService, ECommerceDbContext context)
+        public ProductController(IProductService productService, ICategoryService categoryService)
         {
             _productService = productService;
             _categoryService = categoryService;
-            _context = context;
         }
         public IActionResult Index()
         {

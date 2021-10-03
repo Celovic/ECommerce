@@ -19,9 +19,10 @@ namespace ECommerce.Entities.Entities.Concrete
         [Required]
         public string City{ get; set; }
         [Required]
-        [Range(15,70)]
+        [MinLength(20)]
         public string Address{ get; set; }
         [Required]
+        [Range(15, 70)]
         public int Age { get; set; }
     }
 }

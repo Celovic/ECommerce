@@ -15,12 +15,10 @@ namespace ECommerce.WebApp.Areas.admin.Controllers
     {
         readonly IProductService _productService;
         readonly ICategoryService _categoryService;
-        readonly ECommerceDbContext _context;
-        public CategoryController(IProductService productService, ICategoryService categoryService, ECommerceDbContext context)
+        public CategoryController(IProductService productService, ICategoryService categoryService)
         {
             _productService = productService;
             _categoryService = categoryService;
-            _context = context;
         }
         public IActionResult Index()
         {
@@ -66,15 +64,14 @@ namespace ECommerce.WebApp.Areas.admin.Controllers
             return View();
         }
 
-        public IActionResult DeleteCategory(int id, Product product, Category category)
+        public IActionResult DeleteCategory(int id)
         {
-            var q = _context.TBLProduct.Where(x => x.CategoryId == id);
-            foreach (var item in q)
+            var query = _productService.GetAll().Where(x => x.CategoryId == id);
+            foreach (var item in query)
             {
                 _productService.Remove(new Product { ProductId = item.ProductId });
             }
             _categoryService.Remove(new Category { CategoryId = id });
-            //_context.SaveChanges();
             return RedirectToAction("Index", "Default");
         }
     }

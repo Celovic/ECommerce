@@ -15,12 +15,6 @@ namespace ECommerce.WebApp.Models
         public Cart Cart { get; set; }
         public CartLine CartLine { get; set; }
         public ShoppingDetails ShoppingDetails{ get; set; }
-        public string UserName { get; internal set; }
-        public string ProductTitle { get; set; }
-        public string ProductDescription { get; set; }
-        public int StockQuantity { get; set; }
-        public string CategoyName { get; set; }
-        public int ProductId { get; set; }
-        public int CategotyId{ get; set; }
+       
     }
 }
