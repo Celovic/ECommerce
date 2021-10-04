@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "Qwl7lU/9HI73W5jZUgBlAQ794g7ay4HBaKkiVZEXYjeuNFVW9pPuuK1cQzBZ9kjKxDe3RwFmpH9t21k0yke5mA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\celal\\OneDrive\\Masaüstü\\RequestProject\\ECommerce.WebApi\\ECommerce.WebApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\celal\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\celal\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\celal\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\celal\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\celal\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\celal\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}

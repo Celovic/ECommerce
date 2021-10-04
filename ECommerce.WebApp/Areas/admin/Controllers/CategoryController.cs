@@ -59,7 +59,7 @@ namespace ECommerce.WebApp.Areas.admin.Controllers
             if (ModelState.IsValid)
             {
                 _categoryService.Update(category);
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","Default");
             }
             return View();
         }
