@@ -3,14 +3,16 @@ using ECommerce.Entities.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ECommerce.Entities.Migrations
 {
     [DbContext(typeof(ECommerceDbContext))]
-    partial class ECommerceDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211004151945_CategoryProductRelationship1")]
+    partial class CategoryProductRelationship1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -59,7 +61,8 @@ namespace ECommerce.Entities.Migrations
 
                     b.HasKey("ProductId");
 
-                    b.HasIndex("CategoryId");
+                    b.HasIndex("CategoryId")
+                        .IsUnique();
 
                     b.ToTable("TBLProduct");
                 });
@@ -67,8 +70,8 @@ namespace ECommerce.Entities.Migrations
             modelBuilder.Entity("ECommerce.Entities.Entities.Concrete.Product", b =>
                 {
                     b.HasOne("ECommerce.Entities.Entities.Concrete.Category", "Category")
-                        .WithMany("Products")
-                        .HasForeignKey("CategoryId")
+                        .WithOne("Product")
+                        .HasForeignKey("ECommerce.Entities.Entities.Concrete.Product", "CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -77,7 +80,7 @@ namespace ECommerce.Entities.Migrations
 
             modelBuilder.Entity("ECommerce.Entities.Entities.Concrete.Category", b =>
                 {
-                    b.Navigation("Products");
+                    b.Navigation("Product");
                 });
 #pragma warning restore 612, 618
         }

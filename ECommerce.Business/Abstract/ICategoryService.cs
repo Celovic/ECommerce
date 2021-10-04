@@ -10,7 +10,7 @@ namespace ECommerce.Business.Abstract
 {
     public interface ICategoryService : IGenericRepository<Category>
     {
-        IEnumerable<Category> Included();
+        IEnumerable<Category> IncludeProducts();
         void DeleteWithProduct(int id);
         IEnumerable<Category> Search(string searchString);
     }

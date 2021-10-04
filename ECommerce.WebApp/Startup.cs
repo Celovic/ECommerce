@@ -3,6 +3,7 @@ using ECommerce.Business.Concrete;
 using ECommerce.Entities.Context;
 using ECommerce.WebApp.CartServices.Abstract;
 using ECommerce.WebApp.CartServices.Concrete;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -36,7 +37,12 @@ namespace ECommerce.WebApp
             services.AddTransient<ICartService, CartService>();
             services.AddTransient<IProductService, ProductService>();
             services.AddTransient<ICategoryService, CategoryService>();
-
+            services.AddAuthentication(
+                CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(
+                x =>
+                {
+                    x.LoginPath = "/admin/AdminLogin/Login";
+                });
             services.AddMvc(options => options.EnableEndpointRouting = false);
         }
 
@@ -51,6 +57,7 @@ namespace ECommerce.WebApp
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
             app.UseSession();
 

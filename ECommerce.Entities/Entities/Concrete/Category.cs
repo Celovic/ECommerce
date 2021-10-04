@@ -17,6 +17,6 @@ namespace ECommerce.Entities.Entities.Concrete
         [Required]
         [MaxLength(200)]
         public string CategoryName{ get; set; }
-        public virtual ICollection<Product> Products { get; set; }
+        public  IEnumerable<Product> Products { get; set; }
     }
 }

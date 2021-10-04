@@ -2,6 +2,7 @@
 using ECommerce.Entities.Context;
 using ECommerce.Entities.Entities.Concrete;
 using ECommerce.WebApp.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 namespace ECommerce.WebApp.Areas.admin.Controllers
 {
     [Area("admin")]
+    [Authorize(Roles = "Admin")]
     public class CategoryController : Controller
     {
         readonly IProductService _productService;
@@ -66,12 +68,13 @@ namespace ECommerce.WebApp.Areas.admin.Controllers
 
         public IActionResult DeleteCategory(int id)
         {
-            var query = _productService.GetAll().Where(x => x.CategoryId == id);
+           /* var query = _productService.GetAll().Where(x => x.CategoryId == id);
             foreach (var item in query)
             {
                 _productService.Remove(new Product { ProductId = item.ProductId });
             }
-            _categoryService.Remove(new Category { CategoryId = id });
+            _categoryService.Remove(new Category { CategoryId = id });*/
+            _categoryService.DeleteWithProduct(id);
             return RedirectToAction("Index", "Default");
         }
     }

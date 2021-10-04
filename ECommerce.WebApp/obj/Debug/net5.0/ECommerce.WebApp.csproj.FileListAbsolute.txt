@@ -161,3 +161,4 @@ C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApp\obj\Debug\net
 C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApp\obj\Debug\net5.0\Razor\Views\Shared\Components\Category\Default.cshtml.g.cs
 C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApp\obj\Debug\net5.0\Razor\Views\Cart\CartList.cshtml.g.cs
 C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApp\obj\Debug\net5.0\Razor\Views\Cart\CompleteShopping.cshtml.g.cs
+C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApp\obj\Debug\net5.0\Razor\Areas\admin\Views\AdminLogin\Login.cshtml.g.cs

@@ -2,6 +2,7 @@
 using ECommerce.Entities.Context;
 using ECommerce.Entities.Entities.Concrete;
 using ECommerce.WebApp.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
@@ -12,6 +13,7 @@ using System.Threading.Tasks;
 namespace ECommerce.WebApp.Areas.admin.Controllers
 {
     [Area("admin")]
+    [Authorize(Roles = "Admin")]
     public class DefaultController : Controller
     {
         readonly IProductService _productService;

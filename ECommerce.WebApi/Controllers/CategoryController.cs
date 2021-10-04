@@ -49,12 +49,7 @@ namespace ECommerce.WebApi.Controllers
         [HttpDelete("{categoryId}")]
         public void Delete(int categoryId)
         {
-            var query = _productService.GetAll().Where(x => x.CategoryId == categoryId);
-            foreach (var item in query)
-            {
-                _productService.Remove(new Product { ProductId = item.ProductId });
-            }
-            _categoryService.Remove(new Category { CategoryId = categoryId });
+            _categoryService.DeleteWithProduct(categoryId);
         }
         [HttpGet("GetSearchCategory/{searchString}")]
         public IEnumerable<Category> GetSearchCategory(string searchString)

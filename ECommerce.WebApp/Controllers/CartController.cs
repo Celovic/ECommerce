@@ -76,6 +76,12 @@ namespace ECommerce.WebApp.Controllers
                     };
                     _productService.Update(product);
                 }
+               /* cart = new Cart
+                {
+                    CartLines = null
+                };*/
+                cart.CartLines.Clear();
+                _cartSessionService.SetCart(cart);
                 return RedirectToAction("Index", "Home");
             }
             return View();
