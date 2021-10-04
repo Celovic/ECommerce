@@ -12,5 +12,7 @@ namespace ECommerce.Business.Abstract
     {
         public IEnumerable<Product> Search(string searchString);
         public IEnumerable<Product> GetProductsWithCatgory(string p);
+        List<Product> GetByCategory(int categoryId);
+
     }
 }

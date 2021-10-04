@@ -45,7 +45,7 @@ namespace ECommerce.WebApp.Controllers
             var cart = _cartSessionService.GetCart();
             _cartService.RemoveFromCart(cart, productId);
             _cartSessionService.SetCart(cart);
-            return RedirectToAction("List");
+            return RedirectToAction("CartList");
         }
 
         public IActionResult CompleteShopping()

@@ -22,7 +22,7 @@
             <td>@item.Product.ProductDescription</td>
             <td>@item.Quantity.</td>
             <td class="text-right">
-                <a class="btn btn-danger" asp-controller="Cart" asp-action="Remove" asp-route-productId="@item.Product.ProductId">Remove</a>
+                <a class="btn btn-danger" asp-controller="Cart" asp-action="RemoveToCart" asp-route-productId="@item.Product.ProductId">Remove</a>
             </td>
         </tr>
     }
@@ -36,8 +36,8 @@
         </a>
     </td>
     <td class="text-right">
-        <a asp-controller="Cart" asp-action="CompleteSopping" class="btn btn-secondary">
-            <span class="glyphicon-shopping-play"></span>Checkout
+        <a asp-controller="Cart" asp-action="CompleteShopping" class="btn btn-secondary">
+            <span class="glyphicon-shopping-play"></span>Check Out
         </a>
     </td>
 </tr>

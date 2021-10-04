@@ -9,12 +9,12 @@ namespace ECommerce.WebApp.CartServices.Concrete
         public void AddToCart(Cart cart, Product product)
         {
             CartLine cartLine = cart.CartLines.FirstOrDefault(c => c.Product.ProductId == product.ProductId);
-            if (cartLine!=null)
+            if (cartLine != null)
             {
                 cartLine.Quantity++;
                 return;
             }
-            cart.CartLines.Add(new CartLine { Product = product,Quantity=1});
+            cart.CartLines.Add(new CartLine { Product = product, Quantity = 1 });
         }
 
         public List<CartLine> List(Cart cart)
@@ -24,7 +24,16 @@ namespace ECommerce.WebApp.CartServices.Concrete
 
         public void RemoveFromCart(Cart cart, int productId)
         {
-            cart.CartLines.Remove(cart.CartLines.FirstOrDefault(c => c.Product.ProductId == productId));
+            var query = cart.CartLines.FirstOrDefault(c => c.Product.ProductId == productId);
+            if (query.Quantity > 0)
+            {
+                var remainingQuantity1 = cart.CartLines.Where(x => x.Product.ProductId == productId).Select(y => { y.Quantity -= 1; return y; });
+            }
+            else
+            {
+                cart.CartLines.Remove(cart.CartLines.FirstOrDefault(c => c.Product.ProductId == productId));
+
+            }
         }
     }
 }

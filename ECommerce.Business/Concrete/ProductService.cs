@@ -36,5 +36,10 @@ namespace ECommerce.Business.Concrete
         {
             return _context.TBLProduct.Include(p);
         }
+
+        public List<Product> GetByCategory(int categoryId)
+        {
+            return _context.TBLProduct.Where(p => p.CategoryId == categoryId || categoryId == 0).ToList();
+        }
     }
 }
