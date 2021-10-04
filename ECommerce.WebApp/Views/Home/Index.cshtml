@@ -9,7 +9,8 @@
 }
 @using (Html.BeginForm("Index", "Home", FormMethod.Get))
 {
-@Html.TextBox("searchString")<input type="submit" value="Search" />
+    @Html.TextBox("searchString")
+    <input type="submit" value="Search" />
 }
 <table id="customers" class="table table-responsive">
     <tr>
@@ -19,14 +20,18 @@
     </tr>
     @foreach (var item in Model.Products)
     {
-        <tr>
-            <td>@item.ProductTitle</td>
-            <td>@item.ProductDescription</td>
-            <td>
-                <a class="btn btn-success" asp-controller="Cart"
-                   asp-action="AddToCart" asp-route-productId="@item.ProductId">Add to cart</a>
-            </td>
-        </tr>
+        if (item.StockQuantity != 0)
+        {
+            <tr>
+                <td>@item.ProductTitle</td>
+                <td>@item.ProductDescription</td>
+                <td>
+                    <a class="btn btn-success" asp-controller="Cart"
+                       asp-action="AddToCart" asp-route-productId="@item.ProductId">Add to cart</a>
+                </td>
+            </tr>
+        }
+
     }
 </table>
 <product-list-pager current-category="@Model.CurrentCategory"

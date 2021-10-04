@@ -24,7 +24,17 @@ namespace ECommerce.WebApp.CartServices.Concrete
 
         public void RemoveFromCart(Cart cart, int productId)
         {
-            cart.CartLines.Remove(cart.CartLines.FirstOrDefault(c => c.Product.ProductId == productId));
+            var query = cart.CartLines.FirstOrDefault(x => x.Product.ProductId == productId);
+            if (query.Quantity > 1)
+            {
+                query.Quantity -= 1;
+                return;
+            }
+            else
+            {
+                cart.CartLines.Remove(cart.CartLines.FirstOrDefault(c => c.Product.ProductId == productId));
+            }
+
         }
     }
 }
