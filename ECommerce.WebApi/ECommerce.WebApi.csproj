@@ -8,4 +8,15 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ECommerce.Business\ECommerce.Business.csproj" />
+    <ProjectReference Include="..\ECommerce.Entities\ECommerce.Entities.csproj" />
+    <ProjectReference Include="..\ECommerce.Repository\ECommerce.Repository.csproj" />
+    <ProjectReference Include="..\ECommerce.WebApp\ECommerce.WebApp.csproj" />
+  </ItemGroup>
+
 </Project>
