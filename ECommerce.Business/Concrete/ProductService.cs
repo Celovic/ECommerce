@@ -22,8 +22,9 @@ namespace ECommerce.Business.Concrete
 
         public IEnumerable<Product> Search(string searchString)
         {
-            var search = from m in _context.TBLProduct
-                         select m;
+            var x = _context.TBLCategory.Include("Product");
+
+            var search = _context.TBLProduct.Include("Category");
             if (!String.IsNullOrEmpty(searchString))
             {
                 search = search.Where(x => x.ProductTitle.Contains(searchString) ||
@@ -32,7 +33,7 @@ namespace ECommerce.Business.Concrete
             }
             return search.ToList();
         }
-        public IEnumerable<Product> GetProductsWithCatgory(string p)
+        public IEnumerable<Product> GetProductsWithCategory(string p)
         {
             return _context.TBLProduct.Include(p);
         }

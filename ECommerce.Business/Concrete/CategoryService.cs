@@ -27,15 +27,19 @@ namespace ECommerce.Business.Concrete
             _context.TBLCategory.Remove(new Category { CategoryId = id });
             _context.SaveChanges();
         }
-        /*
-         var deletedEntity = context.Entry(entity);
-                deletedEntity.State = EntityState.Deleted;
-                context.SaveChanges();
-         */
-        public IEnumerable<Category> Included(string p)
+        public IEnumerable<Category> Included()
         {
-            var joinProduct= _context.TBLCategory.Include("TBLProduct").ToList();
+            var joinProduct= _context.TBLCategory.Include("Product").ToList();
             return joinProduct;
+        }
+        public IEnumerable<Category> Search(string searchString)
+        {
+            var search = _context.TBLCategory.ToList();
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                search = search.Where(x => x.CategoryName == searchString).ToList();
+            }
+            return search.ToList();
         }
     }
 }

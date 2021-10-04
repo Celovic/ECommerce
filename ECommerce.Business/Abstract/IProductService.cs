@@ -10,8 +10,8 @@ namespace ECommerce.Business.Abstract
 {
     public interface IProductService : IGenericRepository<Product>
     {
-        public IEnumerable<Product> Search(string searchString);
-        public IEnumerable<Product> GetProductsWithCatgory(string p);
+        IEnumerable<Product> Search(string searchString);
+        IEnumerable<Product> GetProductsWithCategory(string p);
         List<Product> GetByCategory(int categoryId);
 
     }

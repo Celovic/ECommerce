@@ -7,10 +7,16 @@
     Layout = "~/Views/_Layout.cshtml";
 
 }
+@using (Html.BeginForm("Index", "Home", FormMethod.Get))
+{
+@Html.TextBox("searchString")<input type="submit" value="Search" />
+}
 <table id="customers" class="table table-responsive">
     <tr>
         <th>Title</th>
         <th>Description</th>
+        <th>Category Name</th>
+        <th>Proccess</th>
     </tr>
     @foreach (var item in Model.Products)
     {

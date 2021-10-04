@@ -1,9 +1,13 @@
-﻿@model IEnumerable<ECommerce.Entities.Entities.Concrete.Product>
+﻿@model ECommerce.WebApp.Models.ViewModel
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/_AdminLayout.cshtml";
 }
-
+@using (Html.BeginForm("Index", "Default","admin", FormMethod.Get))
+{
+    @Html.TextBox("searchString")
+    <input type="submit" value="Search" />
+}
 <table id="customers" class="table table-responsive" style="text-align:center">
     <tr>
         <th>Title</th>
@@ -14,8 +18,10 @@
         <th>Category Name</th>
         <th>Category Process</th>
     </tr>
-    @foreach (var item in Model)
+
+    @foreach (var item in Model.Products)
     {
+
         @if (item.StockQuantity == 0)
         {
             <tr class="bg-danger">

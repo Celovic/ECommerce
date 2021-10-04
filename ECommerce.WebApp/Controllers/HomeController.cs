@@ -17,12 +17,23 @@ namespace ECommerce.WebApp.Controllers
         {
             _productService = productService;
         }
-        public IActionResult Index(int page = 1, int category = 0)
+        public IActionResult Index(string searchString, int page = 1, int category = 0)
         {
             int pageSize = 10;
             var products = _productService.GetByCategory(category);
-
-
+            var searching = _productService.Search(searchString);
+            if (searchString != null)
+            {
+                ViewModel modelSearching = new ViewModel
+                {
+                    Products = searching.Skip((page - 1) * pageSize).Take(pageSize).ToList(),
+                    PageCount = (int)Math.Ceiling(products.Count() / (double)pageSize),
+                    PageSize = pageSize,
+                    CurrentCategory = category,
+                    CurrentPage = page
+                };
+                return View(modelSearching);
+            }
             ViewModel model = new ViewModel
             {
                 Products = products.Skip((page - 1) * pageSize).Take(pageSize).ToList(),
@@ -31,9 +42,9 @@ namespace ECommerce.WebApp.Controllers
                 CurrentCategory = category,
                 CurrentPage = page
             };
-            var x = model.CurrentCategory;
             return View(model);
-        }
 
+
+        }
     }
 }

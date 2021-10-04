@@ -25,10 +25,32 @@ namespace ECommerce.WebApp.Areas.admin.Controllers
             _context = context;
 
         }
-        public IActionResult Index(ViewModel model, int id)
+        public IActionResult Index(string searchString, int page = 1, int category = 0)
         {
-            //Products.Where(x=>x.CategoryId==item.CategoryId).Select(y=>y.ProductTitle)
-            return View(_productService.GetProductsWithCatgory("Category"));
+            int pageSize = 10;
+            var products = _productService.GetByCategory(category);
+            var searching = _productService.Search(searchString);
+            if (searchString != null)
+            {
+                ViewModel modelSearching = new ViewModel
+                {
+                    Products = searching.Skip((page - 1) * pageSize).Take(pageSize).ToList(),
+                    PageCount = (int)Math.Ceiling(products.Count() / (double)pageSize),
+                    PageSize = pageSize,
+                    CurrentCategory = category,
+                    CurrentPage = page
+                };
+                return View(modelSearching);
+            }
+            ViewModel model = new ViewModel
+            {
+                Products = products.Skip((page - 1) * pageSize).Take(pageSize).ToList(),
+                PageCount = (int)Math.Ceiling(products.Count() / (double)pageSize),
+                PageSize = pageSize,
+                CurrentCategory = category,
+                CurrentPage = page
+            };
+            return View(model);
         }
     }
 }
