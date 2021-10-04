@@ -29,12 +29,12 @@ namespace ECommerce.WebApi.Controllers
             return _productService.GetProductsWithCategory("Category");
         }
 
-        [HttpGet("{productId}")]
+        [HttpGet("GetByProduct/{productId}")]
         public Product GetByProduct(int productId)
         {
             return _productService.GetAll().FirstOrDefault(x=>x.ProductId == productId);
         }
-        [HttpGet("{categoryId}")]
+        [HttpGet("GetByCategory/{categoryId}")]
         public Category GetByCategory(int categoryId)
         {
             return _categoryService.GetAll().FirstOrDefault(x=>x.CategoryId == categoryId);

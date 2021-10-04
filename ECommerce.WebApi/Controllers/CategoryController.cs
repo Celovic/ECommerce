@@ -27,9 +27,9 @@ namespace ECommerce.WebApi.Controllers
         }
 
         [HttpGet("{categoryId}")]
-        public Category Get(int id)
+        public Category Get(int categoryId)
         {
-            return _categoryService.GetAll().FirstOrDefault(x=>x.CategoryId==id);
+            return _categoryService.GetAll().FirstOrDefault(x => x.CategoryId == categoryId);
         }
 
         [HttpPost]
@@ -40,21 +40,26 @@ namespace ECommerce.WebApi.Controllers
         }
 
         [HttpPut("{categoryId}")]
-        public Category Put(int id, [FromBody] Category category)
+        public Category Put(int categoryId, [FromBody] Category category)
         {
             _categoryService.Update(category);
             return category;
         }
 
         [HttpDelete("{categoryId}")]
-        public void Delete(int id)
+        public void Delete(int categoryId)
         {
-            var query = _productService.GetAll().Where(x => x.CategoryId == id);
+            var query = _productService.GetAll().Where(x => x.CategoryId == categoryId);
             foreach (var item in query)
             {
                 _productService.Remove(new Product { ProductId = item.ProductId });
             }
-            _categoryService.Remove(new Category { CategoryId = id });
+            _categoryService.Remove(new Category { CategoryId = categoryId });
+        }
+        [HttpGet("GetSearchCategory/{searchString}")]
+        public IEnumerable<Category> GetSearchCategory(string searchString)
+        {
+            return _categoryService.Search(searchString);
         }
     }
 }

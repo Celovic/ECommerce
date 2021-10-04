@@ -30,7 +30,7 @@ namespace ECommerce.WebApi.Controllers
         [HttpGet("{productId}")]
         public Product Get(int id)
         {
-            return _productService.GetAll().FirstOrDefault(x=>x.ProductId==id);
+            return _productService.GetAll().FirstOrDefault(x => x.ProductId == id);
         }
 
         [HttpPost]
@@ -41,22 +41,21 @@ namespace ECommerce.WebApi.Controllers
         }
 
         [HttpPut("{productId}")]
-        public Product Put(int id, [FromBody] Product product)
+        public Product Put(int productId, [FromBody] Product product)
         {
             _productService.Update(product);
             return product;
         }
 
         [HttpDelete("{productId}")]
-        public void Delete(int id)
+        public void Delete(int productId)
         {
-            _productService.Remove(new Product { ProductId = id});
+            _productService.Remove(new Product { ProductId = productId });
         }
-        [HttpGet("{searchString}")]
-        public IEnumerable<Product> GetSearch(string searchString)
+        [HttpGet("GetSearchProduct/{searchString}")]
+        public IEnumerable<Product> GetSearchProduct(string searchString)
         {
-            var searching = _productService.Search(searchString);
-            return searching;
+            return _productService.Search(searchString);
         }
     }
 }
