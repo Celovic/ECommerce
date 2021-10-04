@@ -12,5 +12,6 @@ namespace ECommerce.Business.Abstract
     {
         IEnumerable<Category> Included();
         void DeleteWithProduct(int id);
+        IEnumerable<Category> Search(string searchString);
     }
 }
