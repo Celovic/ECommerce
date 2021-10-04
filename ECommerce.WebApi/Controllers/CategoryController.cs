@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ECommerce.Business.Abstract;
+using ECommerce.Entities.Entities.Concrete;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,31 +13,48 @@ namespace ECommerce.WebApi.Controllers
     [ApiController]
     public class CategoryController : ControllerBase
     {
-        [HttpGet]
-        public IEnumerable<string> Get()
+        readonly IProductService _productService;
+        readonly ICategoryService _categoryService;
+        public CategoryController(IProductService productService, ICategoryService categoryService)
         {
-            return new string[] { "value1", "value2" };
+            _productService = productService;
+            _categoryService = categoryService;
+        }
+        [HttpGet]
+        public IEnumerable<Category> Get()
+        {
+            return _categoryService.GetAll();
         }
 
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("{categoryId}")]
+        public Category Get(int id)
         {
-            return "value";
+            return _categoryService.GetAll().FirstOrDefault(x=>x.CategoryId==id);
         }
 
         [HttpPost]
-        public void Post([FromBody] string value)
+        public Category Post([FromBody] Category category)
         {
+            _categoryService.Add(category);
+            return category;
         }
 
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut("{categoryId}")]
+        public Category Put(int id, [FromBody] Category category)
         {
+            _categoryService.Update(category);
+            return category;
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{categoryId}")]
         public void Delete(int id)
         {
+            var query = _productService.GetAll().Where(x => x.CategoryId == id);
+            foreach (var item in query)
+            {
+                _productService.Remove(new Product { ProductId = item.ProductId });
+            }
+            _categoryService.Remove(new Category { CategoryId = id });
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using ECommerce.Business.Abstract;
+using ECommerce.Entities.Entities.Concrete;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,21 +13,31 @@ namespace ECommerce.WebApi.Controllers
     [ApiController]
     public class HomeController : ControllerBase
     {
-        [HttpGet]
-        public IEnumerable<string> Get()
+        readonly IProductService _productService;
+        readonly ICategoryService _categoryService;
+
+        public HomeController(IProductService productService, ICategoryService categoryService)
         {
-            return new string[] { "value1", "value2" };
+            _productService = productService;
+            _categoryService = categoryService;
+        }
+
+        [HttpGet]
+        public IEnumerable<Product> Get()
+        {
+
+            return _productService.GetProductsWithCategory("Category");
         }
 
         [HttpGet("{productId}")]
-        public string Get(int productId)
+        public Product GetByProduct(int productId)
         {
-            return "value";
+            return _productService.GetAll().FirstOrDefault(x=>x.ProductId == productId);
         }
         [HttpGet("{categoryId}")]
-        public string Get(int categoryId)
+        public Category GetByCategory(int categoryId)
         {
-            return "value";
+            return _categoryService.GetAll().FirstOrDefault(x=>x.CategoryId == categoryId);
         }
 
     }

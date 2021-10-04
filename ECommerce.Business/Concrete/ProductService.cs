@@ -35,7 +35,7 @@ namespace ECommerce.Business.Concrete
         }
         public IEnumerable<Product> GetProductsWithCategory(string p)
         {
-            return _context.TBLProduct.Include(p);
+            return _context.TBLProduct.Include("Category");
         }
 
         public List<Product> GetByCategory(int categoryId)
