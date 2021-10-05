@@ -3,7 +3,7 @@ using ECommerce.WebApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ViewComponents;
 using System;
-
+using System.Threading.Tasks;
 
 namespace ECommerce.WebApp.ViewComponents
 {
@@ -14,11 +14,11 @@ namespace ECommerce.WebApp.ViewComponents
         {
             _categoryService = categoryService;
         }
-        public ViewViewComponentResult Invoke()
+        public async Task<ViewViewComponentResult> InvokeAsync()
         {
             var model = new ViewModel
             {
-                Categories = _categoryService.GetAll(),
+                Categories = await _categoryService.GetAll(),
             };
             return View(model);
         }

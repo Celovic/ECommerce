@@ -14,23 +14,21 @@ namespace ECommerce.WebApi.Controllers
     public class ProductController : ControllerBase
     {
         readonly IProductService _productService;
-        readonly ICategoryService _categoryService;
 
-        public ProductController(IProductService productService, ICategoryService categoryService)
+        public ProductController(IProductService productService)
         {
             _productService = productService;
-            _categoryService = categoryService;
         }
         [HttpGet]
-        public IEnumerable<Product> Get()
+        public async Task<IEnumerable<Product>> Get()
         {
-            return _productService.GetAll();
+            return await _productService.GetAll();
         }
 
         [HttpGet("{productId}")]
-        public Product Get(int id)
+        public async Task<Product> Get(int id)
         {
-            return _productService.GetAll().FirstOrDefault(x => x.ProductId == id);
+            return (await _productService.GetAll().ConfigureAwait(false)).FirstOrDefault(x => x.ProductId == id);
         }
 
         [HttpPost]

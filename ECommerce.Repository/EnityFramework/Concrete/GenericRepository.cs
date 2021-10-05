@@ -12,36 +12,36 @@ namespace ECommerce.Repository.EnityFramework.Concrete
 {
     public class GenericRepository<TEntity, TContext> : IGenericRepository<TEntity> where TEntity : class, IEntity, new() where TContext : DbContext, new()
     {
-        public void Add(TEntity entity)
+        public async Task Add(TEntity entity)
         {
             using (var context = new TContext())
             {
                 var addedEntity = context.Entry(entity);
                 addedEntity.State = EntityState.Added;
-                context.SaveChanges();
+                await context.SaveChangesAsync();
             }
         }
-        public IEnumerable<TEntity> GetAll()
+        public async Task<IEnumerable<TEntity>> GetAll()
         {
             using (var context = new TContext())
             {
-                return context.Set<TEntity>().ToList();
+                return await context.Set<TEntity>().ToListAsync();
             }
         }
-        public IEnumerable<TEntity> GetAll(Expression<Func<TEntity, bool>> filter)
+        public async Task<IEnumerable<TEntity>> GetAll(Expression<Func<TEntity, bool>> filter)
         {
             using (var context = new TContext())
             {
                 return filter == null
-                    ? context.Set<TEntity>().ToList()
-                    : context.Set<TEntity>().Where(filter).ToList();
+                    ? await context.Set<TEntity>().ToListAsync()
+                    : await context.Set<TEntity>().Where(filter).ToListAsync();
             }
         }
-        public TEntity GetById(int id)
+        public async Task<TEntity> GetById(int id)
         {
             using (var context = new TContext())
             {
-                return context.Set<TEntity>().Find(id);
+                return await context.Set<TEntity>().FindAsync(id);
             }
         }
 

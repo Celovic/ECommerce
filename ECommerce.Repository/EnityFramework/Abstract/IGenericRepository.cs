@@ -10,11 +10,11 @@ namespace ECommerce.Repository.EnityFramework.Abstract
 {
     public interface IGenericRepository<TEntity> where TEntity : class, IEntity, new()
     {
-        void Add(TEntity entity);
+        Task Add(TEntity entity);
         void Update(TEntity entity);
-        TEntity GetById(int id);
-        IEnumerable<TEntity> GetAll();
-        IEnumerable<TEntity> GetAll(Expression<Func<TEntity, bool>> filter);
+        Task<TEntity> GetById(int id);
+        Task<IEnumerable<TEntity>> GetAll();
+        Task<IEnumerable<TEntity>> GetAll(Expression<Func<TEntity, bool>> filter);
         void Remove(TEntity entity);
         //public IEnumerable<TEntity> TIncluded(string a);
 

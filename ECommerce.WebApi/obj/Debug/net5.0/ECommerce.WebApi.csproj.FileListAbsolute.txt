@@ -1,3 +1,9 @@
+C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApi\obj\Debug\net5.0\ECommerce.WebApi.csproj.AssemblyReference.cache
+C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApi\obj\Debug\net5.0\ECommerce.WebApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApi\obj\Debug\net5.0\ECommerce.WebApi.AssemblyInfoInputs.cache
+C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApi\obj\Debug\net5.0\ECommerce.WebApi.AssemblyInfo.cs
+C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApi\obj\Debug\net5.0\ECommerce.WebApi.csproj.CoreCompileInputs.cache
+C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApi\obj\Debug\net5.0\ECommerce.WebApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApi\bin\Debug\net5.0\ECommerce.WebApp.Views.dll
 C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApi\bin\Debug\net5.0\ECommerce.WebApp.Views.pdb
 C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApi\bin\Debug\net5.0\ECommerce.WebApp.deps.json
@@ -135,13 +141,7 @@ C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApi\bin\Debug\net
 C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApi\bin\Debug\net5.0\ECommerce.Entities.pdb
 C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApi\bin\Debug\net5.0\ECommerce.Repository.pdb
 C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApi\bin\Debug\net5.0\ECommerce.WebApp.pdb
-C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApi\obj\Debug\net5.0\ECommerce.WebApi.csproj.AssemblyReference.cache
-C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApi\obj\Debug\net5.0\ECommerce.WebApi.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApi\obj\Debug\net5.0\ECommerce.WebApi.AssemblyInfoInputs.cache
-C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApi\obj\Debug\net5.0\ECommerce.WebApi.AssemblyInfo.cs
-C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApi\obj\Debug\net5.0\ECommerce.WebApi.csproj.CoreCompileInputs.cache
 C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApi\obj\Debug\net5.0\ECommerce.WebApi.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApi\obj\Debug\net5.0\ECommerce.WebApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApi\obj\Debug\net5.0\staticwebassets\ECommerce.WebApi.StaticWebAssets.Manifest.cache
 C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApi\obj\Debug\net5.0\staticwebassets\ECommerce.WebApi.StaticWebAssets.xml
 C:\Users\celal\OneDrive\Masaüstü\RequestProject\ECommerce.WebApi\obj\Debug\net5.0\scopedcss\bundle\ECommerce.WebApi.styles.css

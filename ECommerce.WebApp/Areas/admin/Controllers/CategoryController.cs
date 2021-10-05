@@ -22,9 +22,9 @@ namespace ECommerce.WebApp.Areas.admin.Controllers
             _productService = productService;
             _categoryService = categoryService;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View(_categoryService.GetAll());
+            return View(await _categoryService.GetAll());
         }
         public IActionResult AddCategory()
         {
@@ -46,12 +46,12 @@ namespace ECommerce.WebApp.Areas.admin.Controllers
             return View("Add");
         }
 
-        public IActionResult UpdateCategory(ViewModel model, int id)
+        public async Task<IActionResult> UpdateCategory(ViewModel model, int id)
         {
             model = new ViewModel
             {
-                Category = _categoryService.GetById(id),
-                Categories = _categoryService.GetAll().Where(x => x.CategoryId == id)
+                Category = await _categoryService.GetById(id),
+                Categories = (await _categoryService.GetAll()).Where(x => x.CategoryId == id)
             };
             return View(model);
         }

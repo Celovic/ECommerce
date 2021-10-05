@@ -21,15 +21,15 @@ namespace ECommerce.WebApi.Controllers
             _categoryService = categoryService;
         }
         [HttpGet]
-        public IEnumerable<Category> Get()
+        public async Task<IEnumerable<Category>> Get()
         {
-            return _categoryService.GetAll();
+            return await _categoryService.GetAll();
         }
 
         [HttpGet("{categoryId}")]
-        public Category Get(int categoryId)
+        public async Task<Category> Get(int categoryId)
         {
-            return _categoryService.GetAll().FirstOrDefault(x => x.CategoryId == categoryId);
+            return (await _categoryService.GetAll()).FirstOrDefault(x => x.CategoryId == categoryId);
         }
 
         [HttpPost]

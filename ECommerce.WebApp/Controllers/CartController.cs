@@ -23,12 +23,13 @@ namespace ECommerce.WebApp.Controllers
             _cartService = cartService;
             _productService = productService;
         }
-        public IActionResult AddToCart(Product product)
+        public async Task<IActionResult> AddToCart(Product product)
         {
             var productToBeAdded = _productService.GetById(product.ProductId);
             var cart = _cartSessionService.GetCart();
-            _cartService.AddToCart(cart, productToBeAdded);
+            _cartService.AddToCart(cart, await productToBeAdded);
             _cartSessionService.SetCart(cart);
+            TempData.Add("message", "{0} The product has been added to your cart");
             return RedirectToAction("Index", "Home");
         }
         public IActionResult CartList()
@@ -74,16 +75,19 @@ namespace ECommerce.WebApp.Controllers
                         ProductDescription = item.Product.ProductDescription,
                         StockQuantity = remainingStock
                     };
+                    if (product.StockQuantity<0)
+                    {
+                        TempData.Add("message", "this product is out of stock {0}");
+                        return RedirectToAction("CartList","Cart");
+                    }
                     _productService.Update(product);
+                    TempData.Add("message", "your information has been received");
                 }
-               /* cart = new Cart
-                {
-                    CartLines = null
-                };*/
                 cart.CartLines.Clear();
                 _cartSessionService.SetCart(cart);
                 return RedirectToAction("Index", "Home");
             }
+            TempData.Add("message", "your information hasn't been received");
             return View();
         }
     }

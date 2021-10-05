@@ -150,7 +150,12 @@
 
     <div class="col-md-10" style="margin-top:75px;">
         @await Component.InvokeAsync("Category")
-
+        <div class="col col-md-12">
+            @if (TempData["message"] != null)
+            {
+                <div class="alert alert-info" role="alert">@TempData["message"]</div>
+            }
+        </div>
         @RenderBody()
     </div>
     <div class="container-fluid justify-content-center text-light" style="margin-bottom:0px;">

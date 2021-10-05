@@ -30,14 +30,14 @@ namespace ECommerce.WebApi.Controllers
         }
 
         [HttpGet("GetByProduct/{productId}")]
-        public Product GetByProduct(int productId)
+        public async Task<Product> GetByProduct(int productId)
         {
-            return _productService.GetAll().FirstOrDefault(x=>x.ProductId == productId);
+            return (await _productService.GetAll()).FirstOrDefault(x=>x.ProductId == productId);
         }
         [HttpGet("GetByCategory/{categoryId}")]
-        public Category GetByCategory(int categoryId)
+        public async Task<Category> GetByCategory(int categoryId)
         {
-            return _categoryService.GetAll().FirstOrDefault(x=>x.CategoryId == categoryId);
+            return (await _categoryService.GetAll()).FirstOrDefault(x=>x.CategoryId == categoryId);
         }
 
     }

@@ -18,13 +18,11 @@ namespace ECommerce.WebApp.Areas.admin.Controllers
     {
         readonly IProductService _productService;
         readonly ICategoryService _categoryService;
-        readonly ECommerceDbContext _context;
 
-        public DefaultController(IProductService productService, ICategoryService categoryService, ECommerceDbContext context)
+        public DefaultController(IProductService productService, ICategoryService categoryService)
         {
             _productService = productService;
             _categoryService = categoryService;
-            _context = context;
 
         }
         public IActionResult Index(string searchString, int page = 1, int category = 0)

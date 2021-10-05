@@ -1,6 +1,7 @@
 ﻿using ECommerce.Business.Abstract;
 using ECommerce.Entities.Context;
 using ECommerce.Entities.Entities.Concrete;
+using ECommerce.Repository.EnityFramework.Abstract;
 using ECommerce.WebApp.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -22,17 +23,16 @@ namespace ECommerce.WebApp.Areas.admin.Controllers
             _productService = productService;
             _categoryService = categoryService;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View(_productService.GetAll());
+            return View(await _productService.GetAll());
         }
-
-        public IActionResult Add()
+        public async Task<IActionResult> Add()
         {
             var model = new ViewModel()
             {
                 Product = new Product(),
-                Categories = _categoryService.GetAll()
+                Categories = await _categoryService.GetAll()
             };
 
             return View(model);
@@ -48,13 +48,13 @@ namespace ECommerce.WebApp.Areas.admin.Controllers
             }
             return View("Add");
         }
-        public IActionResult Update(ViewModel model, int id)
+        public async Task<IActionResult> Update(ViewModel model, int id)
         {
             model = new ViewModel
             {
-                Product = _productService.GetById(id),
-                Categories = _categoryService.GetAll(),
-                Products = _productService.GetAll().Where(x => x.ProductId == id)
+                Product = await _productService.GetById(id),
+                Categories =await _categoryService.GetAll(),
+                Products =(await _productService.GetAll()).Where(x => x.ProductId == id)
             };
             return View(model);
         }
